@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import { UserContext } from "./components/UserContext";
+import AppRouter from "./Routes/AppRouter";
 function App() {
+  
+  const [user, setUser] = useState({
+    userName: 'Cristian',
+    gameScore: 0,
+    hitsInRow: 0,
+    movements: 0,
+    difficult: 'med'
+
+  })
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext.Provider value={{user,setUser}}>
+      <AppRouter />
+    </UserContext.Provider>
   );
 }
 

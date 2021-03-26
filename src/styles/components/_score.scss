@@ -1,0 +1,36 @@
+.textBox-kids  {
+    height: 36px;
+    width: 140px;
+    background-color: rgb(90, 235, 155);
+    border-radius: 22px 16px 12px 14px;
+    position: relative;
+}
+.bubbles, .texts {
+    height: 36px;
+    width: 140px;
+    position: absolute;
+    top: 0; left: 0;
+}
+.texts span {
+    width: 140px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.textBox-kids.big, .textBox-kids.big .bubbles, .textBox-kids.big .texts {
+    height: 48px;
+    width: 200px;
+}
+.textBox-kids.big .texts span {line-height: 48px; font-size: 24px; width: 200px;}
+
+.textBox-kids.inner, .textBox-kids.inner .bubbles, .textBox-kids.inner .texts {
+    height: 36px;
+    width: 70px;
+}
+.textBox-kids.inner .texts span {line-height: 36px; font-size: 21px;}
+
+.textBox-kids .bubble-w { 
+    width: 10px;
+    height: 5px;
+}
