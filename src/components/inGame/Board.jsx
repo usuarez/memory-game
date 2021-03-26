@@ -42,8 +42,8 @@ export default function Board() {
         localStorage.setItem('gameBoard', JSON.stringify(randomInsert(difficultyBoxes())))
         localStorage.setItem('difficult', JSON.stringify(user.difficult))
     }
-    let gameDifficult = '',
-        boxes = ''
+    
+    let gameDifficult = '', boxes = ''
     const loadStorage = () => {
         gameDifficult = JSON.parse(localStorage.getItem('difficult'))
         boxes = JSON.parse(localStorage.getItem('gameBoard'))
@@ -127,12 +127,6 @@ export default function Board() {
         }
     }, [openCardsNow, gameDifficult])
 
-
-
-
-
-
-    
     return (
         <>
             <div className={`row square-container ${(user.difficult === 'easy' ) ? `easy` : (user.difficult === 'med' ) ? `med` : 'hard' }`}>
