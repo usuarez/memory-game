@@ -1,0 +1,241 @@
+//colors
+$main-color: #7943f5;
+$complementary-color: #fbcb28;
+$red-color: #f54343;
+$skyblue-color: #82d9e0;
+$green-color: #46d459;
+$orange-color: #f57e5d;
+
+.m-color {
+  background-color: $main-color;
+}
+.c-color {
+  background-color: $complementary-color;
+}
+.red-color {
+  background-color: $red-color;
+}
+.skyblue-color {
+  background-color: $skyblue-color;
+}
+.green-color {
+  background-color: $green-color;
+}
+.orange-color {
+  background-color: $orange-color;
+}
+
+html,
+body {
+  background-color: rgb(200, 200, 200);
+  margin: 0px;
+  font-size: 24px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
+* {
+  font-family: "Chewy", cursive;
+}
+
+.game-bg--container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+.game,
+.game-bg {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  min-width: 100%;
+  height: 100vh;
+}
+
+.game {
+  overflow: scrollY;
+}
+.gbtn,
+input {
+  border: none;
+  border-radius: 24px 16px 18px 12px !important;
+  //max-width: 400px !important;
+}
+input {
+  text-indent: 16px;
+  border: 3px solid #7943f5;
+  padding: 8px;
+}
+.GameCards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+.GameCards-container.easy {
+  @media (min-width: 992px) {
+    width: 480px;
+  }
+}
+.GameCards-container.normal {
+  @media (min-width: 992px) {
+    width: 540px;
+  }
+}
+.GameCards-container.hard {
+  @media (min-width: 992px) {
+    width: 540px;
+  }
+}
+.GameCards-container.pro {
+  @media (min-width: 992px) {
+    width: 640px;
+  }
+}
+.GameCards-container.insane {
+  @media (min-width: 992px) {
+    width: 800px;
+  }
+}
+
+.GameCard {
+  margin: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  background: linear-gradient(
+    317deg,
+    rgb(129, 51, 231) 0%,
+    rgb(171, 118, 240) 100%
+  );
+  width: 64px;
+  height: 64px;
+  @media (min-width: 413px) {
+    width: 76px;
+    height: 76px;
+  }
+  @media (min-width: 513px) {
+    width: 92px;
+    height: 92px;
+  }
+  @media (min-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.GameCard.active {
+  animation: jump 0.4s;
+}
+
+.GameCard img {
+  width: 72px;
+  transform: scale(0);
+}
+.GameCard img.discovered {
+  transform: scale(1);
+}
+
+.GameCard img.closed {
+  animation: out 0.4s forwards;
+}
+.GameCard img.opened {
+  animation: in 0.4s forwards;
+}
+
+.in {
+  animation: in 0.4s forwards;
+}
+.out {
+  animation: out 0.4s forwards;
+}
+
+@keyframes in {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes out {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.GameScore {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainMenu {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.score-container {
+  background-color: #f0f0f0;
+  color: #353535;
+}
+.ScoreCard {
+  display: flex;
+  border-top: 1px solid $main-color;
+  border-bottom: 1px solid $main-color;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+  width: 100%;
+  margin-bottom: 12px;
+  height: 64px;
+  p {
+    margin-bottom: 0px;
+    margin-right: 12px;
+    text-transform: capitalize;
+  }
+  p:nth-child(2) {
+    width: 180px;
+    margin-left: 12px;
+  }
+  p:nth-child(3) {
+    width: 80px;
+  }
+  p:nth-child(4) {
+    width: 100px;
+  }
+}
+
